@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alhel - De retour le 20 août 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #b66195;
+            --secondary: #e995b7;
+            --light: #fff0f6;
+        }
+        
+        body {
+                  font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #b66195;
+
+            background-color: var(--light);
+            background-image: 
+                linear-gradient(rgba(233, 149, 183, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(233, 149, 183, 0.15) 1px, transparent 1px);
+            background-size: 20px 20px;
+            overflow-x: hidden;
+            font-size: 13px !important;
+        }
+
+
+
+        .title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(182, 97, 149, 0.3);
+        }
+        
+        .countdown-box {
+            background: linear-gradient(135deg, #fff, #fff0f6);
+            box-shadow: 0 4px 15px rgba(182, 97, 149, 0.15);
+        }
+        
+        .btn-notify {
+            background: linear-gradient(135deg, #b66195, #e995b7);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-notify:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(182, 97, 149, 0.3);
+        }
+        
+        /* Éléments décoratifs */
+        .flower {
+            position: absolute;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: absolute;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .paper {
+            position: absolute;
+            opacity: 0.6;
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .float-animation-slow {
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .float-animation-fast {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center px-4 py-10">
+    <!-- Éléments décoratifs -->
+    <div class="flower float-animation" style="top: 10%; left: 5%;">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="#e995b7"/>
+            <path d="M12 18C13.1 18 14 18.9 14 20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20C10 18.9 10.9 18 12 18Z" fill="#e995b7"/>
+            <path d="M4 10C5.1 10 6 10.9 6 12C6 13.1 5.1 14 4 14C2.9 14 2 13.1 2 12C2 10.9 2.9 10 4 10Z" fill="#e995b7"/>
+            <path d="M20 10C21.1 10 22 10.9 22 12C22 13.1 21.1 14 20 14C18.9 14 18 13.1 18 12C18 10.9 18.9 10 20 10Z" fill="#e995b7"/>
+            <path d="M6.34 17.66C7.15 17.66 7.8 18.31 7.8 19.12C7.8 19.93 7.15 20.58 6.34 20.58C5.53 20.58 4.88 19.93 4.88 19.12C4.88 18.31 5.53 17.66 6.34 17.66Z" fill="#e995b7"/>
+            <path d="M17.66 6.34C18.47 6.34 19.12 6.99 19.12 7.8C19.12 8.61 18.47 9.26 17.66 9.26C16.85 9.26 16.2 8.61 16.2 7.8C16.2 6.99 16.85 6.34 17.66 6.34Z" fill="#e995b7"/>
+            <path d="M6.34 3.42C7.15 3.42 7.8 4.07 7.8 4.88C7.8 5.69 7.15 6.34 6.34 6.34C5.53 6.34 4.88 5.69 4.88 4.88C4.88 4.07 5.53 3.42 6.34 3.42Z" fill="#e995b7"/>
+            <path d="M17.66 17.66C18.47 17.66 19.12 18.31 19.12 19.12C19.12 19.93 18.47 20.58 17.66 20.58C16.85 20.58 16.2 19.93 16.2 19.12C16.2 18.31 16.85 17.66 17.66 17.66Z" fill="#e995b7"/>
+            <path d="M12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12C8 9.8 9.8 8 12 8Z" fill="#b66195"/>
+        </svg>
+    </div>
+    
+    <div class="heart float-animation-slow" style="top: 15%; right: 10%;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#e995b7"/>
+        </svg>
+    </div>
+    
+    <div class="paper float-animation-fast" style="bottom: 15%; left: 15%;">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" fill="#b66195" fill-opacity="0.7"/>
+            <path d="M7 7h10v2H7zm0 4h10v2H7zm0 4h7v2H7z" fill="#b66195" fill-opacity="0.7"/>
+        </svg>
+    </div>
+    
+    <div class="flower float-animation" style="bottom: 10%; right: 8%;">
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="#b66195"/>
+            <path d="M12 18C13.1 18 14 18.9 14 20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20C10 18.9 10.9 18 12 18Z" fill="#b66195"/>
+            <path d="M4 10C5.1 10 6 10.9 6 12C6 13.1 5.1 14 4 14C2.9 14 2 13.1 2 12C2 10.9 2.9 10 4 10Z" fill="#b66195"/>
+            <path d="M20 10C21.1 10 22 10.9 22 12C22 13.1 21.1 14 20 14C18.9 14 18 13.1 18 12C18 10.9 18.9 10 20 10Z" fill="#b66195"/>
+            <path d="M6.34 17.66C7.15 17.66 7.8 18.31 7.8 19.12C7.8 19.93 7.15 20.58 6.34 20.58C5.53 20.58 4.88 19.93 4.88 19.12C4.88 18.31 5.53 17.66 6.34 17.66Z" fill="#b66195"/>
+            <path d="M17.66 6.34C18.47 6.34 19.12 6.99 19.12 7.8C19.12 8.61 18.47 9.26 17.66 9.26C16.85 9.26 16.2 8.61 16.2 7.8C16.2 6.99 16.85 6.34 17.66 6.34Z" fill="#b66195"/>
+            <path d="M6.34 3.42C7.15 3.42 7.8 4.07 7.8 4.88C7.8 5.69 7.15 6.34 6.34 6.34C5.53 6.34 4.88 5.69 4.88 4.88C4.88 4.07 5.53 3.42 6.34 3.42Z" fill="#b66195"/>
+            <path d="M17.66 17.66C18.47 17.66 19.12 18.31 19.12 19.12C19.12 19.93 18.47 20.58 17.66 20.58C16.85 20.58 16.2 19.93 16.2 19.12C16.2 18.31 16.85 17.66 17.66 17.66Z" fill="#b66195"/>
+            <path d="M12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12C8 9.8 9.8 8 12 8Z" fill="#e995b7"/>
+        </svg>
+    </div>
+
+ <!-- Contenu principal -->
+<div class="max-w-3xl mx-auto text-center z-10">
+    <img 
+        src="https://sawa-dev-2-storage-bucket.storage.googleapis.com/profiles/r5kcavivrhciiyrv-9c580.png" 
+        alt="Alhel Logo" 
+        class="mx-auto" 
+        style="max-width: 30px; height: auto;">
+
+    <div class="mt-8 mb-10">
+        <p class="text-xl md:text-2xl text-primary mb-2">Alhel prend un peu de repos...</p>
+        <p class="text-lg md:text-xl text-secondary">Le site sera de retour le 18 août in sha Allah avec un joli réassort !</p>
+    </div>
+</div>
+        
+        <div class="countdown-container rounded-2xl p-6 md:p-8 mb-10 max-w-2xl mx-auto">
+            <div class="grid grid-cols-4 gap-3 md:gap-6">
+                <div class="countdown-box rounded-xl p-3 md:p-4 flex flex-col items-center">
+                    <div id="days" class="text-2xl md:text-4xl font-semibold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-secondary mt-1">Jours</div>
+                </div>
+                <div class="countdown-box rounded-xl p-3 md:p-4 flex flex-col items-center">
+                    <div id="hours" class="text-2xl md:text-4xl font-semibold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-secondary mt-1">Heures</div>
+                </div>
+                <div class="countdown-box rounded-xl p-3 md:p-4 flex flex-col items-center">
+                    <div id="minutes" class="text-2xl md:text-4xl font-semibold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-secondary mt-1">Minutes</div>
+                </div>
+                <div class="countdown-box rounded-xl p-3 md:p-4 flex flex-col items-center">
+                    <div id="seconds" class="text-2xl md:text-4xl font-semibold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-secondary mt-1">Secondes</div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn-notify text-white font-medium py-3 px-8 rounded-full shadow-md hover:shadow-lg">
+            <a href="https://alhel.company.site">
+            Je découvre la papéterie </a>
+        </button>
+        
+        <div class="mt-12 text-sm text-secondary opacity-80">
+            © 2024 Alhel - Papeterie musulmane
+        </div>
+    </div>
+
+    <script>
+        // Date cible : 20 août 2025
+        const targetDate = new Date('August 18, 2025 00:00:00').getTime();
+        
+        // Mise à jour du compte à rebours toutes les secondes
+        const countdown = setInterval(function() {
+            // Date actuelle
+            const now = new Date().getTime();
+            
+            // Différence entre la date cible et maintenant
+            const distance = targetDate - now;
+            
+            // Calculs pour jours, heures, minutes et secondes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Affichage du compte à rebours
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // Si le compte à rebours est terminé
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }, 1000);
+        
+        
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966628d2258d2b3b',t:'MTc1MzcyNDQwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
